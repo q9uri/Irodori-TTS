@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from .text.japanese import g2p
 
 SIMPLE_REPLACE_MAP: dict[str, str] = {
     "\t": "",
@@ -71,4 +72,5 @@ def normalize_text(text: str) -> str:
     text = text.replace("...", "…")
     text = text.replace("..", "…")
 
+    text = g2p(text)
     return text

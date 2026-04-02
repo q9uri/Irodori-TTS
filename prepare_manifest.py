@@ -102,6 +102,7 @@ def parse_optional_float(value: str) -> float | None:
     try:
         out = float(raw)
     except ValueError as exc:
+        print(f"DEBUG: Error processing item: {exc}")
         raise argparse.ArgumentTypeError(
             f"Expected float or one of [none, null, off, disable, disabled], got: {value}"
         ) from exc
@@ -223,6 +224,7 @@ def _prepare_example(
         try:
             wav, sr = _coerce_audio(sample[args.audio_column])
         except Exception as exc:
+            print(f"DEBUG: Error processing item: {exc}")
             return _PreparedItem(
                 idx=idx,
                 status="skip",
@@ -248,6 +250,7 @@ def _prepare_example(
             speaker_id=speaker_id,
         )
     except Exception as exc:
+        print(f"DEBUG: Error processing item: {exc}")
         return _PreparedItem(
             idx=idx,
             status="error",
@@ -276,6 +279,7 @@ def _start_prefetch(
                     idx, sample = entry
                     queue.put(_prepare_example(idx, sample, args))
             except Exception as exc:
+                print(f"DEBUG: Error processing item: {exc}")
                 queue.put(
                     _PreparedItem(
                         idx=-1,
@@ -303,6 +307,7 @@ def _start_prefetch(
                     continue
                 raw_queue.put(entry)
         except Exception as exc:
+            print(f"DEBUG: Error processing item: {exc}")
             queue.put(
                 _PreparedItem(
                     idx=-1,
@@ -389,6 +394,7 @@ def _iter_rank_examples(
                 try:
                     sample = dataset[int(idx)]
                 except Exception as exc:
+                    print(f"DEBUG: Error processing item: {exc}")
                     yield _PreparedItem(
                         idx=int(idx),
                         status="error",

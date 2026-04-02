@@ -20,9 +20,20 @@ dependencies = [
     "torch>=2.10.0",
     "torchaudio>=2.10.0",
     "torchcodec>=0.10.0",
+    "soundfile",
     "transformers<5",
     "tqdm>=4.67.3",
     "wandb>=0.17.0",
+
+    "jpreprocess",
+    "onnxruntime",
+    "sudachipy",
+    "sudachidict-core",
+    "jaconv",
+    "kanalizer",
+
+    "funasr",
+    "ffmpeg-python"
 ]
 
 [project.optional-dependencies]
