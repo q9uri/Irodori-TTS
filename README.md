@@ -192,6 +192,19 @@ uv run python infer.py \
 
 Encodes audio from a Hugging Face dataset into DACVAE latents and produces a JSONL manifest for training.
 
+
+```bash
+uv run python prepare_manifest.py \
+  --dataset json \
+  --data-files output/asr_opt/slicer_opt.list \
+  --split train \
+  --audio-column audio \
+  --text-column text \
+  --output-manifest data/train_manifest.jsonl \
+  --latent-dir data/latents \
+  --device cuda
+```
+
 ```bash
 uv run python prepare_manifest.py \
   --dataset myorg/my_dataset \
@@ -299,8 +312,8 @@ LoRA fine-tuning:
 uv run python train.py \
   --config configs/train_500m_v2_lora.yaml \
   --manifest data/train_manifest.jsonl \
-  --output-dir outputs/irodori_tts_lora \
-  --init-checkpoint path/to/Irodori-TTS-500M-v2.safetensors
+  --output-dir ckpt/irodori_tts_lora \
+  --init-checkpoint models/Irodori-TTS-500M-v2.safetensors
 ```
 
 Caption-conditioned voice-design LoRA fine-tuning:

@@ -1,0 +1,623 @@
+--- Metadata ---
+config_json: {"latent_dim":32,"latent_patch_size":1,"model_dim":1280,"num_layers":12,"num_heads":20,"mlp_ratio":2.875,"text_mlp_ratio":2.6,"speaker_mlp_ratio":2.6,"dropout":
+0.0,"text_vocab_size":99574,"text_tokenizer_repo":"llm-jp/llm-jp-3-150m","text_add_bos":true,"text_dim":512,"text_layers":10,"text_heads":8,"speaker_dim":768,"speaker_layers
+":8,"speaker_heads":12,"speaker_patch_size":1,"timestep_embed_dim":512,"adaln_rank":192,"norm_eps":1e-05,"max_text_len":256,"fixed_target_latent_steps":750}
+------------------------------
+Key Name                                                     | Shape                | dtype
+-----------------------------------------------------------------------------------------------
+blocks.0.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.0.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.0.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.0.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.0.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.0.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.0.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.0.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.0.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.0.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.0.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.0.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.0.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.0.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.0.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.0.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.0.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.0.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.0.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.0.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.0.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.0.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.0.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.0.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.0.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.0.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.0.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.0.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.0.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.0.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.0.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.0.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.1.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.1.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.1.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.1.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.1.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.1.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.1.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.1.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.1.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.1.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.1.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.1.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.1.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.1.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.1.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.1.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.1.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.1.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.1.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.1.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.1.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.1.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.1.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.1.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.1.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.1.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.1.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.1.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.1.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.1.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.1.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.1.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.10.attention.gate.weight                              | [1280, 1280]         | torch.float32
+blocks.10.attention.k_norm.weight                            | [20, 64]             | torch.float32
+blocks.10.attention.q_norm.weight                            | [20, 64]             | torch.float32
+blocks.10.attention.wk.weight                                | [1280, 1280]         | torch.float32
+blocks.10.attention.wk_speaker.weight                        | [1280, 768]          | torch.float32
+blocks.10.attention.wk_text.weight                           | [1280, 512]          | torch.float32
+blocks.10.attention.wo.weight                                | [1280, 1280]         | torch.float32
+blocks.10.attention.wq.weight                                | [1280, 1280]         | torch.float32
+blocks.10.attention.wv.weight                                | [1280, 1280]         | torch.float32
+blocks.10.attention.wv_speaker.weight                        | [1280, 768]          | torch.float32
+blocks.10.attention.wv_text.weight                           | [1280, 512]          | torch.float32
+blocks.10.attention_adaln.gate_down.weight                   | [192, 1280]          | torch.float32
+blocks.10.attention_adaln.gate_up.bias                       | [1280]               | torch.float32
+blocks.10.attention_adaln.gate_up.weight                     | [1280, 192]          | torch.float32
+blocks.10.attention_adaln.scale_down.weight                  | [192, 1280]          | torch.float32
+blocks.10.attention_adaln.scale_up.bias                      | [1280]               | torch.float32
+blocks.10.attention_adaln.scale_up.weight                    | [1280, 192]          | torch.float32
+blocks.10.attention_adaln.shift_down.weight                  | [192, 1280]          | torch.float32
+blocks.10.attention_adaln.shift_up.bias                      | [1280]               | torch.float32
+blocks.10.attention_adaln.shift_up.weight                    | [1280, 192]          | torch.float32
+blocks.10.mlp.w1.weight                                      | [3680, 1280]         | torch.float32
+blocks.10.mlp.w2.weight                                      | [1280, 3680]         | torch.float32
+blocks.10.mlp.w3.weight                                      | [3680, 1280]         | torch.float32
+blocks.10.mlp_adaln.gate_down.weight                         | [192, 1280]          | torch.float32
+blocks.10.mlp_adaln.gate_up.bias                             | [1280]               | torch.float32
+blocks.10.mlp_adaln.gate_up.weight                           | [1280, 192]          | torch.float32
+blocks.10.mlp_adaln.scale_down.weight                        | [192, 1280]          | torch.float32
+blocks.10.mlp_adaln.scale_up.bias                            | [1280]               | torch.float32
+blocks.10.mlp_adaln.scale_up.weight                          | [1280, 192]          | torch.float32
+blocks.10.mlp_adaln.shift_down.weight                        | [192, 1280]          | torch.float32
+blocks.10.mlp_adaln.shift_up.bias                            | [1280]               | torch.float32
+blocks.10.mlp_adaln.shift_up.weight                          | [1280, 192]          | torch.float32
+blocks.11.attention.gate.weight                              | [1280, 1280]         | torch.float32
+blocks.11.attention.k_norm.weight                            | [20, 64]             | torch.float32
+blocks.11.attention.q_norm.weight                            | [20, 64]             | torch.float32
+blocks.11.attention.wk.weight                                | [1280, 1280]         | torch.float32
+blocks.11.attention.wk_speaker.weight                        | [1280, 768]          | torch.float32
+blocks.11.attention.wk_text.weight                           | [1280, 512]          | torch.float32
+blocks.11.attention.wo.weight                                | [1280, 1280]         | torch.float32
+blocks.11.attention.wq.weight                                | [1280, 1280]         | torch.float32
+blocks.11.attention.wv.weight                                | [1280, 1280]         | torch.float32
+blocks.11.attention.wv_speaker.weight                        | [1280, 768]          | torch.float32
+blocks.11.attention.wv_text.weight                           | [1280, 512]          | torch.float32
+blocks.11.attention_adaln.gate_down.weight                   | [192, 1280]          | torch.float32
+blocks.11.attention_adaln.gate_up.bias                       | [1280]               | torch.float32
+blocks.11.attention_adaln.gate_up.weight                     | [1280, 192]          | torch.float32
+blocks.11.attention_adaln.scale_down.weight                  | [192, 1280]          | torch.float32
+blocks.11.attention_adaln.scale_up.bias                      | [1280]               | torch.float32
+blocks.11.attention_adaln.scale_up.weight                    | [1280, 192]          | torch.float32
+blocks.11.attention_adaln.shift_down.weight                  | [192, 1280]          | torch.float32
+blocks.11.attention_adaln.shift_up.bias                      | [1280]               | torch.float32
+blocks.11.attention_adaln.shift_up.weight                    | [1280, 192]          | torch.float32
+blocks.11.mlp.w1.weight                                      | [3680, 1280]         | torch.float32
+blocks.11.mlp.w2.weight                                      | [1280, 3680]         | torch.float32
+blocks.11.mlp.w3.weight                                      | [3680, 1280]         | torch.float32
+blocks.11.mlp_adaln.gate_down.weight                         | [192, 1280]          | torch.float32
+blocks.11.mlp_adaln.gate_up.bias                             | [1280]               | torch.float32
+blocks.11.mlp_adaln.gate_up.weight                           | [1280, 192]          | torch.float32
+blocks.11.mlp_adaln.scale_down.weight                        | [192, 1280]          | torch.float32
+blocks.11.mlp_adaln.scale_up.bias                            | [1280]               | torch.float32
+blocks.11.mlp_adaln.scale_up.weight                          | [1280, 192]          | torch.float32
+blocks.11.mlp_adaln.shift_down.weight                        | [192, 1280]          | torch.float32
+blocks.11.mlp_adaln.shift_up.bias                            | [1280]               | torch.float32
+blocks.11.mlp_adaln.shift_up.weight                          | [1280, 192]          | torch.float32
+blocks.2.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.2.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.2.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.2.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.2.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.2.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.2.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.2.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.2.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.2.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.2.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.2.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.2.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.2.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.2.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.2.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.2.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.2.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.2.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.2.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.2.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.2.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.2.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.2.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.2.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.2.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.2.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.2.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.2.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.2.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.2.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.2.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.3.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.3.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.3.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.3.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.3.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.3.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.3.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.3.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.3.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.3.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.3.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.3.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.3.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.3.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.3.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.3.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.3.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.3.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.3.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.3.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.3.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.3.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.3.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.3.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.3.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.3.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.3.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.3.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.3.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.3.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.3.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.3.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.4.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.4.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.4.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.4.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.4.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.4.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.4.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.4.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.4.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.4.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.4.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.4.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.4.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.4.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.4.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.4.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.4.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.4.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.4.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.4.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.4.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.4.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.4.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.4.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.4.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.4.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.4.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.4.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.4.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.4.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.4.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.4.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.5.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.5.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.5.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.5.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.5.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.5.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.5.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.5.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.5.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.5.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.5.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.5.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.5.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.5.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.5.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.5.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.5.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.5.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.5.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.5.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.5.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.5.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.5.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.5.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.5.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.5.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.5.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.5.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.5.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.5.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.5.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.5.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.6.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.6.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.6.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.6.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.6.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.6.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.6.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.6.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.6.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.6.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.6.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.6.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.6.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.6.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.6.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.6.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.6.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.6.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.6.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.6.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.6.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.6.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.6.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.6.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.6.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.6.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.6.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.6.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.6.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.6.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.6.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.6.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.7.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.7.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.7.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.7.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.7.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.7.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.7.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.7.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.7.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.7.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.7.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.7.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.7.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.7.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.7.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.7.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.7.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.7.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.7.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.7.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.7.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.7.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.7.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.7.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.7.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.7.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.7.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.7.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.7.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.7.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.7.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.7.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.8.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.8.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.8.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.8.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.8.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.8.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.8.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.8.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.8.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.8.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.8.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.8.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.8.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.8.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.8.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.8.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.8.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.8.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.8.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.8.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.8.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.8.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.8.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.8.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.8.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.8.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.8.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.8.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.8.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.8.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.8.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.8.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+blocks.9.attention.gate.weight                               | [1280, 1280]         | torch.float32
+blocks.9.attention.k_norm.weight                             | [20, 64]             | torch.float32
+blocks.9.attention.q_norm.weight                             | [20, 64]             | torch.float32
+blocks.9.attention.wk.weight                                 | [1280, 1280]         | torch.float32
+blocks.9.attention.wk_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.9.attention.wk_text.weight                            | [1280, 512]          | torch.float32
+blocks.9.attention.wo.weight                                 | [1280, 1280]         | torch.float32
+blocks.9.attention.wq.weight                                 | [1280, 1280]         | torch.float32
+blocks.9.attention.wv.weight                                 | [1280, 1280]         | torch.float32
+blocks.9.attention.wv_speaker.weight                         | [1280, 768]          | torch.float32
+blocks.9.attention.wv_text.weight                            | [1280, 512]          | torch.float32
+blocks.9.attention_adaln.gate_down.weight                    | [192, 1280]          | torch.float32
+blocks.9.attention_adaln.gate_up.bias                        | [1280]               | torch.float32
+blocks.9.attention_adaln.gate_up.weight                      | [1280, 192]          | torch.float32
+blocks.9.attention_adaln.scale_down.weight                   | [192, 1280]          | torch.float32
+blocks.9.attention_adaln.scale_up.bias                       | [1280]               | torch.float32
+blocks.9.attention_adaln.scale_up.weight                     | [1280, 192]          | torch.float32
+blocks.9.attention_adaln.shift_down.weight                   | [192, 1280]          | torch.float32
+blocks.9.attention_adaln.shift_up.bias                       | [1280]               | torch.float32
+blocks.9.attention_adaln.shift_up.weight                     | [1280, 192]          | torch.float32
+blocks.9.mlp.w1.weight                                       | [3680, 1280]         | torch.float32
+blocks.9.mlp.w2.weight                                       | [1280, 3680]         | torch.float32
+blocks.9.mlp.w3.weight                                       | [3680, 1280]         | torch.float32
+blocks.9.mlp_adaln.gate_down.weight                          | [192, 1280]          | torch.float32
+blocks.9.mlp_adaln.gate_up.bias                              | [1280]               | torch.float32
+blocks.9.mlp_adaln.gate_up.weight                            | [1280, 192]          | torch.float32
+blocks.9.mlp_adaln.scale_down.weight                         | [192, 1280]          | torch.float32
+blocks.9.mlp_adaln.scale_up.bias                             | [1280]               | torch.float32
+blocks.9.mlp_adaln.scale_up.weight                           | [1280, 192]          | torch.float32
+blocks.9.mlp_adaln.shift_down.weight                         | [192, 1280]          | torch.float32
+blocks.9.mlp_adaln.shift_up.bias                             | [1280]               | torch.float32
+blocks.9.mlp_adaln.shift_up.weight                           | [1280, 192]          | torch.float32
+cond_module.0.weight                                         | [1280, 512]          | torch.float32
+cond_module.2.weight                                         | [1280, 1280]         | torch.float32
+cond_module.4.weight                                         | [3840, 1280]         | torch.float32
+in_proj.bias                                                 | [1280]               | torch.float32
+in_proj.weight                                               | [1280, 32]           | torch.float32
+out_norm.weight                                              | [1280]               | torch.float32
+out_proj.bias                                                | [32]                 | torch.float32
+out_proj.weight                                              | [32, 1280]           | torch.float32
+speaker_encoder.blocks.0.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.0.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.0.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.0.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.0.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.0.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.0.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.0.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.0.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.0.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.0.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.0.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.blocks.1.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.1.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.1.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.1.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.1.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.1.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.1.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.1.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.1.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.1.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.1.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.1.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.blocks.2.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.2.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.2.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.2.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.2.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.2.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.2.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.2.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.2.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.2.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.2.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.2.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.blocks.3.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.3.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.3.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.3.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.3.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.3.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.3.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.3.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.3.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.3.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.3.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.3.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.blocks.4.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.4.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.4.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.4.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.4.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.4.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.4.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.4.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.4.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.4.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.4.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.4.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.blocks.5.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.5.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.5.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.5.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.5.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.5.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.5.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.5.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.5.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.5.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.5.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.5.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.blocks.6.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.6.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.6.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.6.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.6.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.6.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.6.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.6.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.6.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.6.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.6.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.6.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.blocks.7.attention.gate.weight               | [768, 768]           | torch.float32
+speaker_encoder.blocks.7.attention.k_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.7.attention.q_norm.weight             | [12, 64]             | torch.float32
+speaker_encoder.blocks.7.attention.wk.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.7.attention.wo.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.7.attention.wq.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.7.attention.wv.weight                 | [768, 768]           | torch.float32
+speaker_encoder.blocks.7.attention_norm.weight               | [768]                | torch.float32
+speaker_encoder.blocks.7.mlp.w1.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.7.mlp.w2.weight                       | [768, 1996]          | torch.float32
+speaker_encoder.blocks.7.mlp.w3.weight                       | [1996, 768]          | torch.float32
+speaker_encoder.blocks.7.mlp_norm.weight                     | [768]                | torch.float32
+speaker_encoder.in_proj.bias                                 | [768]                | torch.float32
+speaker_encoder.in_proj.weight                               | [768, 32]            | torch.float32
+speaker_norm.weight                                          | [768]                | torch.float32
+text_encoder.blocks.0.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.0.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.0.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.0.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.0.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.0.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.0.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.0.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.0.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.0.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.0.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.0.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.1.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.1.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.1.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.1.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.1.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.1.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.1.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.1.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.1.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.1.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.1.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.1.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.2.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.2.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.2.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.2.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.2.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.2.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.2.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.2.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.2.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.2.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.2.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.2.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.3.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.3.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.3.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.3.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.3.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.3.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.3.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.3.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.3.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.3.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.3.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.3.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.4.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.4.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.4.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.4.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.4.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.4.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.4.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.4.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.4.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.4.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.4.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.4.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.5.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.5.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.5.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.5.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.5.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.5.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.5.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.5.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.5.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.5.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.5.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.5.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.6.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.6.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.6.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.6.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.6.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.6.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.6.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.6.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.6.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.6.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.6.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.6.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.7.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.7.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.7.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.7.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.7.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.7.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.7.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.7.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.7.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.7.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.7.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.7.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.8.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.8.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.8.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.8.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.8.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.8.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.8.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.8.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.8.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.8.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.8.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.8.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.blocks.9.attention.gate.weight                  | [512, 512]           | torch.float32
+text_encoder.blocks.9.attention.k_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.9.attention.q_norm.weight                | [8, 64]              | torch.float32
+text_encoder.blocks.9.attention.wk.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.9.attention.wo.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.9.attention.wq.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.9.attention.wv.weight                    | [512, 512]           | torch.float32
+text_encoder.blocks.9.attention_norm.weight                  | [512]                | torch.float32
+text_encoder.blocks.9.mlp.w1.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.9.mlp.w2.weight                          | [512, 1331]          | torch.float32
+text_encoder.blocks.9.mlp.w3.weight                          | [1331, 512]          | torch.float32
+text_encoder.blocks.9.mlp_norm.weight                        | [512]                | torch.float32
+text_encoder.text_embedding.weight                           | [99574, 512]         | torch.float32
+text_norm.weight                                             | [512]                | torch.float32
+-----------------------------------------------------------------------------------------------
+Total keys: 613
+(irodori-tts) [shima@shima-nyarch Irodori-TTS]$ 

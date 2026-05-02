@@ -8,6 +8,12 @@ __pycache__/
 
 input/
 output/
+models/
+ckpt/
+.idea/
+dnsmos/
+data/
+data_acc/
 
 # Distribution / packaging
 .Python

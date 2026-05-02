@@ -4,7 +4,7 @@ model:
   text_vocab_size: 99574
   text_tokenizer_repo: llm-jp/llm-jp-3-150m
   model_dim: 1280
-  num_layers: 12
+  num_layers: 36
   num_heads: 20
   mlp_ratio: 2.875
   text_mlp_ratio: 2.6
@@ -29,13 +29,13 @@ train:
   compile_model: false
   precision: bf16
   optimizer: adamw
-  learning_rate: 0.001
+  learning_rate: 0.0005
   weight_decay: 0.01
   lr_scheduler: wsd
   warmup_steps: 0
   stable_steps: 0
   min_lr_scale: 0.01
-  max_steps: 40000
+  max_steps: 350000
   max_text_len: 256
   text_condition_dropout: 0.1
   speaker_condition_dropout: 0.1

@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Irodori-TTS training and inference codebase"
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
+requires-python = ">=3.13"
 dependencies = [
     "dacvae",
     "datasets>=3.0.0",
@@ -16,22 +16,15 @@ dependencies = [
     "pyyaml>=6.0",
     "safetensors>=0.7.0",
     "soundfile>=0.12.0",
-    "sentencepiece>=0.1.99,<0.2",
-    "torch>=2.10.0",
-    "torchaudio>=2.10.0",
-    "torchcodec>=0.10.0",
+    "sentencepiece>=0.2",
+    "torch==2.10.0",
+    "torchaudio==2.10.0",
+    "torchcodec==0.10.0",
     "soundfile",
     "transformers<5",
     "tqdm>=4.67.3",
     "wandb>=0.17.0",
-
-    "jpreprocess",
-    "onnxruntime",
-    "sudachipy",
-    "sudachidict-core",
-    "jaconv",
-    "kanalizer",
-
+    "pyopenjtalk-plus",
     "funasr",
     "ffmpeg-python"
 ]
