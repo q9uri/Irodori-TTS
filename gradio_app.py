@@ -375,7 +375,7 @@ def build_ui() -> gr.Blocks:
 
         with gr.Accordion("Sampling", open=True):
             with gr.Row():
-                num_steps = gr.Slider(label="Num Steps", minimum=1, maximum=120, value=40, step=1)
+                num_steps = gr.Slider(label="Num Steps", minimum=1, maximum=120, value=120, step=1)
                 num_candidates = gr.Slider(
                     label="Num Candidates",
                     minimum=1,
@@ -395,7 +395,7 @@ def build_ui() -> gr.Blocks:
                     label="CFG Scale Text",
                     minimum=0.0,
                     maximum=10.0,
-                    value=3.0,
+                    value=1.0,
                     step=0.1,
                 )
                 cfg_scale_speaker = gr.Slider(
